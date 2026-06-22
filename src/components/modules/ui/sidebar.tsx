@@ -26,8 +26,8 @@ const NAV_ITEMS = [
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const pathname = usePathname();
-  const { state } = useSidebar();
-  const isCollapsed = state === "collapsed";
+  const { state, isOverlay } = useSidebar();
+  const isCollapsed = state === "collapsed" && !isOverlay;
 
   return (
     <Sidebar collapsible="icon" {...props}>

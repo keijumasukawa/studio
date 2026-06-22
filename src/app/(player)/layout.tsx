@@ -9,6 +9,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { AppSidebar } from "@/components/modules/ui/sidebar";
 import { AppBreadcrumb } from "@/components/modules/ui/common/breadcrumb";
 import { UserActions } from "@/components/modules/ui/common/user-actions";
+import { ThemeToggle } from "@/components/modules/ui/common/theme-toggle";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -27,6 +28,7 @@ const Layout = ({ children }: LayoutProps) => {
               <AppBreadcrumb />
             </div>
             <div className="h-14 flex items-center gap-2">
+              <ThemeToggle />
               <UserActions />
             </div>
           </div>

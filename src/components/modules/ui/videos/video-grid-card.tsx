@@ -21,9 +21,11 @@ interface VideoGridCardProps {
 
 export const VideoGridCardSkeleton = () => {
   return (
-    <div className="flex flex-col gap-2 w-full">
-      <VideoThumbnailSkeleton />
-      <div className="flex gap-3">
+    <div className="flex flex-col gap-2 w-full bg-sidebar rounded-xl overflow-hidden">
+      <div className="p-2">
+        <VideoThumbnailSkeleton />
+      </div>
+      <div className="flex gap-3 p-2 pt-0">
         <Skeleton className="size-9 rounded-full shrink-0" />
         <div className="flex flex-col gap-2 flex-1 min-w-0">
           <Skeleton className="h-4 w-full" />
@@ -46,14 +48,16 @@ export const VideoGridCard = ({
 }: VideoGridCardProps) => {
   return (
     <Link prefetch href={`/videos/${id}`}>
-      <div className="flex flex-col gap-2 w-full group">
-        <VideoThumbnail
-          imageUrl={thumbnailUrl}
-          previewUrl={previewUrl}
-          title={title}
-          duration={duration}
-        />
-        <div className="flex gap-3">
+      <div className="flex flex-col gap-2 w-full group bg-sidebar rounded-xl overflow-hidden">
+        <div className="p-2">
+          <VideoThumbnail
+            imageUrl={thumbnailUrl}
+            previewUrl={previewUrl}
+            title={title}
+            duration={duration}
+          />
+        </div>
+        <div className="flex gap-3 p-2 pt-0">
           <div className="shrink-0">
             <Image
               src={user.imageUrl}
