@@ -1,0 +1,1 @@
+DROP INDEX "users_clerk_id_unique_index";
